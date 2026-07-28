@@ -1,0 +1,52 @@
+# ---------------------------------------------------------------------------
+# Vehicle Knowledge Base (RAG) - dependencies
+# Versions are floor-pinned (>=) to known-compatible releases as of this
+# review. No duplicate entries. Grouped by pipeline stage.
+# ---------------------------------------------------------------------------
+
+# --- Web framework -----------------------------------------------------
+fastapi>=0.111,<1.0
+uvicorn[standard]>=0.29,<1.0
+
+# --- Config / validation -----------------------------------------------------
+pydantic>=2.6,<3.0
+pydantic-settings>=2.2,<3.0
+python-dotenv>=1.0.1          # required by pydantic-settings for .env file loading
+
+# --- LangChain (RAG orchestration) -----------------------------------------------------
+langchain>=0.2,<0.3
+langchain-community>=0.2,<0.3
+langchain-core>=0.2,<0.3
+langchain-text-splitters>=0.2,<0.3
+langchain-huggingface>=0.0.3
+langchain-chroma>=0.1.1
+
+# --- PDF loading -----------------------------------------------------
+pypdf>=4.2
+
+# --- Embeddings -----------------------------------------------------
+sentence-transformers>=2.7
+# torch is a transitive dependency of sentence-transformers; pin a CPU-friendly
+# floor here only if you hit resolver issues, otherwise let sentence-transformers
+# choose a compatible build for your platform.
+
+# --- Vector database -----------------------------------------------------
+chromadb>=0.5,<0.6
+
+# --- Offline embedding fallback (EMBEDDING_BACKEND=tfidf) -----------------------------------------------------
+# Only exercised when huggingface.co isn't reachable - see
+# app/services/tfidf_embeddings.py. Lexical, not semantic, similarity.
+scikit-learn>=1.4
+joblib>=1.3
+
+# --- LLM (generation) -----------------------------------------------------
+google-generativeai>=0.5
+
+# --- Testing / evaluation -----------------------------------------------------
+pytest>=8.0
+httpx>=0.27          # used by FastAPI's TestClient for API smoke tests
+reportlab>=4.0        # only used by tests/test_load_pdf_metadata.py to build a throwaway test PDF
+
+# --- Optional OCR support for scanned PDFs (see app/services/document_service.py warnings) ---
+# pytesseract>=0.3.10
+# pdf2image>=1.17

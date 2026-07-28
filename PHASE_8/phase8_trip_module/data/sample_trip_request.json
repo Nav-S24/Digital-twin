@@ -1,0 +1,26 @@
+{
+  "vehicle": {
+    "vehicle_id": "Vehicle_0001",
+    "vehicle_health_score": 88.0,
+    "engine_health": 90.0,
+    "battery_health": 85.0,
+    "brake_health": 80.0,
+    "fuel_system_health": 88.0,
+    "tyre_health": 75.0,
+    "failure_probability": 0.12,
+    "remaining_useful_life_km": 2480,
+    "digital_twin_status": {
+      "engine": "OK",
+      "battery": "OK",
+      "brakes": "OK"
+    },
+    "active_dtc_codes": [],
+    "pending_maintenance": [],
+    "fuel_level_l": 42.0,
+    "fuel_tank_capacity_l": 45.0,
+    "mileage_kmpl": 18.0
+  },
+  "source": "Pune",
+  "destination": "Mumbai",
+  "fuel_type": "petrol"
+}

@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OBD Diagnostics Console — Phase 5</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* ── Tata Motors palette ───────────────────────── */
+    --tata-blue:      #005EB8;   /* primary brand blue */
+    --tata-navy:       #003B73;   /* deep navy, header/accents */
+    --tata-navy-2:     #002850;   /* darkest navy, text on light */
+    --tata-sky:        #E8F1FB;   /* pale tint, panel backgrounds */
+    --tata-sky-2:      #D3E4F7;   /* slightly deeper tint, borders */
+    --white:           #FFFFFF;
+    --ink:             #0F2238;   /* primary text */
+    --ink-dim:         #5C7290;   /* secondary text */
+    --line:            #D8E5F4;
+
+    --ok:      #0F8B6C;
+    --ok-bg:   #E3F6EF;
+    --warn:    #C9740A;
+    --warn-bg: #FCEEDB;
+    --crit:    #C92A2A;
+    --crit-bg: #FBE4E4;
+
+    --mono: 'JetBrains Mono', monospace;
+    --sans: 'Inter', sans-serif;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+
+  body{
+    background: var(--tata-sky);
+    color: var(--ink);
+    font-family: var(--sans);
+    min-height:100vh;
+  }
+
+  /* ── Top bar ───────────────────────────────────────── */
+  .topbar{
+    display:flex; align-items:center; justify-content:space-between;
+    padding: 16px 28px;
+    background: linear-gradient(135deg, var(--tata-navy), var(--tata-blue));
+    box-shadow: 0 2px 12px rgba(0,59,115,0.18);
+  }
+  .brand{ display:flex; align-items:center; gap:14px; }
+  .brand .mark{
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    background: var(--white);
+    display:flex; align-items:center; justify-content:center;
+    font-family: var(--sans);
+    font-weight:800;
+    font-size: 19px;
+    color: var(--tata-blue);
+    flex-shrink:0;
+    box-shadow: inset 0 0 0 2px var(--tata-sky-2);
+  }
+  .brand h1{
+    font-weight:700;
+    font-size: 17px;
+    letter-spacing: 0.01em;
+    color: var(--white);
+    line-height:1.2;
+  }
+  .brand .sub{
+    font-size:11px;
+    color: #B9D3EF;
+    letter-spacing: 0.05em;
+    font-weight:500;
+  }
+  .status-dot{
+    width:8px;height:8px;border-radius:50%;
+    background: #B9D3EF;
+    display:inline-block;
+    margin-right:6px;
+  }
+  .status-dot.live{ background: #5CE0A8; box-shadow: 0 0 8px #5CE0A8; }
+  .status-dot.down{ background: #FF7A7A; box-shadow: 0 0 8px #FF7A7A; }
+  #conn-status{ font-size:11px; color:#D9E8FA; letter-spacing:0.03em; font-weight:500; }
+
+  /* ── Layout ────────────────────────────────────────── */
+  .console{
+    display:grid;
+    grid-template-columns: 360px 1fr;
+    gap: 16px;
+    padding: 16px;
+    min-height: calc(100vh - 70px);
+  }
+  @media (max-width: 900px){
+    .console{ grid-template-columns: 1fr; }
+  }
+
+  .panel{
+    background: var(--white);
+    border-radius: 10px;
+    padding: 22px;
+    box-shadow: 0 1px 3px rgba(0,59,115,0.08), 0 1px 2px rgba(0,59,115,0.06);
+    border: 1px solid var(--line);
+  }
+  .panel-title{
+    font-size: 11px;
+    font-weight:700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--tata-blue);
+    margin-bottom: 16px;
+    display:flex; align-items:center; gap:8px;
+  }
+  .panel-title::after{
+    content:''; flex:1; height:1px; background: var(--line);
+  }
+
+  /* ── Input panel ───────────────────────────────────── */
+  .field{ margin-bottom: 18px; }
+  .field label{
+    display:block;
+    font-size: 11.5px;
+    color: var(--ink-dim);
+    font-weight:500;
+    letter-spacing: 0.01em;
+    margin-bottom: 6px;
+  }
+  .field .val{
+    color: var(--tata-blue);
+    font-weight:700;
+    font-family: var(--mono);
+  }
+  input[type=range]{
+    width:100%;
+    -webkit-appearance:none;
+    height: 4px;
+    background: var(--tata-sky-2);
+    border-radius: 2px;
+    outline:none;
+  }
+  input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance:none;
+    width:16px; height:16px; border-radius:50%;
+    background: var(--tata-blue);
+    cursor:pointer;
+    box-shadow: 0 0 0 4px rgba(0,94,184,0.15);
+    border: 2px solid var(--white);
+  }
+  input[type=text]{
+    width:100%;
+    background: var(--white);
+    border:1.5px solid var(--line);
+    color: var(--ink);
+    font-family: var(--mono);
+    font-size: 13px;
+    padding: 9px 11px;
+    border-radius: 6px;
+    outline:none;
+    transition: border-color 0.15s;
+  }
+  input[type=text]:focus{ border-color: var(--tata-blue); }
+  input[type=text]::placeholder{ color: #A8BCD4; }
+
+  .code-chip-row{
+    display:flex; flex-wrap:wrap; gap:6px; margin-top:8px;
+  }
+  .code-chip{
+    font-size:11.5px;
+    font-family: var(--mono);
+    font-weight:600;
+    background: var(--tata-sky);
+    border:1px solid var(--tata-sky-2);
+    color: var(--tata-navy);
+    padding: 4px 9px;
+    border-radius: 4px;
+    display:flex; align-items:center; gap:6px;
+  }
+  .code-chip button{
+    background:none; border:none; color: var(--ink-dim);
+    cursor:pointer; font-size:13px; line-height:1; padding:0;
+  }
+  .code-chip button:hover{ color: var(--crit); }
+
+  .preset-row{ display:flex; flex-wrap:wrap; gap:6px; margin-top:8px; }
+  .preset-btn{
+    font-size:10.5px;
+    font-weight:600;
+    background: var(--white);
+    border:1.5px solid var(--line);
+    color: var(--ink-dim);
+    padding: 5px 9px;
+    border-radius: 4px;
+    cursor:pointer;
+    font-family: var(--sans);
+    letter-spacing:0.02em;
+    transition: all 0.15s;
+  }
+  .preset-btn:hover{ border-color: var(--tata-blue); color: var(--tata-blue); background: var(--tata-sky); }
+
+  .vehicle-grid{
+    display:grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 18px;
+  }
+  .vehicle-grid input{ font-size:12px; padding:7px 9px; }
+
+  .run-btn{
+    width:100%;
+    background: linear-gradient(135deg, var(--tata-blue), var(--tata-navy));
+    color: var(--white);
+    border:none;
+    font-family: var(--sans);
+    font-weight:700;
+    font-size:14px;
+    letter-spacing: 0.03em;
+    padding: 14px;
+    border-radius: 7px;
+    cursor:pointer;
+    margin-top: 6px;
+    box-shadow: 0 2px 8px rgba(0,94,184,0.25);
+    transition: filter 0.15s, transform 0.1s;
+  }
+  .run-btn:hover{ filter: brightness(1.08); }
+  .run-btn:active{ transform: scale(0.99); }
+  .run-btn:disabled{ background: var(--ink-dim); cursor:wait; box-shadow:none; }
+
+  /* ── Output panel ──────────────────────────────────── */
+  #output{
+    display:flex; flex-direction:column; gap:16px;
+  }
+
+  .output-grid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .gauge-card{
+    background: var(--white);
+    border-radius: 10px;
+    padding: 20px 18px;
+    display:flex; flex-direction:column; align-items:center;
+    box-shadow: 0 1px 3px rgba(0,59,115,0.08);
+    border: 1px solid var(--line);
+  }
+  .gauge-card .label{
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:0.07em;
+    color: var(--ink-dim);
+    text-transform:uppercase;
+    margin-top: 10px;
+  }
+  .gauge-card .value{
+    font-size: 19px;
+    font-weight:700;
+    color: var(--ink);
+    margin-top: 2px;
+  }
+  .gauge-card .value.crit{ color: var(--crit); }
+  .gauge-card .value.warn{ color: var(--warn); }
+  .gauge-card .value.ok{ color: var(--ok); }
+
+  .card{
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0,59,115,0.08);
+    border: 1px solid var(--line);
+    overflow: hidden;
+  }
+
+  .trip-banner{
+    padding: 16px 22px;
+    font-weight:700;
+    font-size: 14.5px;
+    letter-spacing: 0.02em;
+    display:flex; align-items:center; gap:12px;
+    border-radius: 10px;
+    border: 1.5px solid;
+  }
+  .trip-banner.ok{ background: var(--ok-bg); color: var(--ok); border-color: #BFE8D6; }
+  .trip-banner.caution{ background: var(--warn-bg); color: var(--warn); border-color: #F3D8A8; }
+  .trip-banner.stop{ background: var(--crit-bg); color: var(--crit); border-color: #F3B8B8; }
+  .trip-banner .dot{ width:10px;height:10px;border-radius:50%; background: currentColor; box-shadow: 0 0 8px currentColor; flex-shrink:0; }
+
+  .detail-section{ padding: 20px 22px; border-bottom:1px solid var(--line); }
+  .detail-section:last-child{ border-bottom:none; }
+  .detail-section h3{
+    font-size: 11.5px;
+    font-weight:700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--tata-blue);
+    margin-bottom: 12px;
+  }
+  .advice-text{
+    color: var(--ink);
+    font-size: 14px;
+    line-height: 1.65;
+    font-weight: 500;
+  }
+
+  .fault-row{
+    display:flex; justify-content:space-between; align-items:flex-start;
+    padding: 11px 0;
+    border-bottom: 1px solid var(--tata-sky);
+    gap: 16px;
+  }
+  .fault-row:last-child{ border-bottom:none; }
+  .fault-code{
+    font-weight:700;
+    color: var(--tata-navy);
+    font-family: var(--mono);
+    font-size:13px;
+    min-width: 64px;
+  }
+  .fault-desc{ flex:1; font-size:13px; color: var(--ink); }
+  .fault-sev{
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+    padding: 3px 8px;
+    border-radius: 4px;
+    height: fit-content;
+    white-space:nowrap;
+  }
+  .sev-Low{ background: var(--ok-bg); color: var(--ok); }
+  .sev-Medium{ background: #FFF3D6; color: #A6760A; }
+  .sev-High{ background: var(--warn-bg); color: var(--warn); }
+  .sev-Critical{ background: var(--crit-bg); color: var(--crit); }
+  .sev-Unknown{ background: var(--tata-sky); color: var(--ink-dim); }
+
+  .action-list{ list-style:none; }
+  .action-list li{
+    font-size:12.5px;
+    color: var(--ink);
+    padding: 7px 0 7px 20px;
+    position:relative;
+    border-bottom: 1px dashed var(--tata-sky-2);
+  }
+  .action-list li:last-child{ border-bottom:none; }
+  .action-list li::before{
+    content:'▸';
+    position:absolute; left:0; color: var(--tata-blue);
+    font-weight:700;
+  }
+
+  .empty-state{
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    height: 100%; min-height: 420px;
+    color: var(--ink-dim);
+    text-align:center;
+    padding: 40px;
+    background: var(--white);
+    border-radius: 10px;
+    border: 1px dashed var(--tata-sky-2);
+  }
+  .empty-state .icon{
+    width:56px; height:56px; border-radius:50%;
+    background: var(--tata-sky);
+    display:flex; align-items:center; justify-content:center;
+    font-size: 26px; margin-bottom:18px; color: var(--tata-blue);
+  }
+  .empty-state h2{
+    color: var(--ink);
+    font-size: 16px;
+    font-weight:700;
+    margin-bottom: 8px;
+  }
+  .empty-state p{ font-size:12.5px; max-width: 320px; line-height:1.6; }
+
+  .error-banner{
+    background: var(--crit-bg);
+    color: var(--crit);
+    padding: 12px 16px;
+    font-size: 12px;
+    font-weight:600;
+    border-radius: 6px;
+    margin-top: 12px;
+    border: 1.5px solid #F3B8B8;
+  }
+
+  a{ color: var(--tata-blue); }
+
+  ::-webkit-scrollbar{ width:8px; height:8px; }
+  ::-webkit-scrollbar-track{ background: var(--tata-sky); }
+  ::-webkit-scrollbar-thumb{ background: var(--tata-sky-2); border-radius:4px; }
+</style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="brand">
+      <div class="mark">T</div>
+      <div>
+        <h1>OBD Diagnostics Console</h1>
+        <div class="sub">PHASE 5 · VEHICLE HEALTH INTELLIGENCE ENGINE</div>
+      </div>
+    </div>
+    <div>
+      <span class="status-dot" id="status-dot"></span>
+      <span id="conn-status">checking backend…</span>
+    </div>
+  </div>
+
+  <div class="console">
+
+    <!-- ── INPUT PANEL ───────────────────────────────── -->
+    <div class="panel">
+      <div class="panel-title">API Endpoint</div>
+      <div class="field">
+        <input type="text" id="api-base" value="http://localhost:8000" placeholder="http://localhost:8000">
+      </div>
+
+      <div class="panel-title">Fault Codes</div>
+      <div class="field">
+        <input type="text" id="code-input" placeholder="Type a code, e.g. P0420, press Enter">
+        <div class="code-chip-row" id="code-chips"></div>
+        <div class="preset-row">
+          <button class="preset-btn" data-codes="P0420">P0420</button>
+          <button class="preset-btn" data-codes="P0300">P0300</button>
+          <button class="preset-btn" data-codes="P0171">P0171</button>
+          <button class="preset-btn" data-codes="P0420,P0300">Multi-fault</button>
+          <button class="preset-btn" data-codes="">Clear all</button>
+        </div>
+      </div>
+
+      <div class="panel-title">Live Telemetry</div>
+
+      <div class="field">
+        <label>Engine RPM &nbsp;<span class="val" id="rpm-val">1500</span></label>
+        <input type="range" id="rpm" min="0" max="6000" value="1500" step="50">
+      </div>
+
+      <div class="field">
+        <label>Process Temp (K) &nbsp;<span class="val" id="temp-val">310</span> K
+          <span style="color:var(--ink-dim); font-family:var(--sans); font-weight:500;">(<span id="temp-c">36.9</span>°C)</span>
+        </label>
+        <input type="range" id="proc_temp" min="250" max="420" value="310" step="1">
+      </div>
+
+      <div class="field">
+        <label>Torque (Nm) &nbsp;<span class="val" id="torque-val">40</span></label>
+        <input type="range" id="torque" min="0" max="150" value="40" step="1">
+      </div>
+
+      <div class="field">
+        <label>Tool / Component Wear (min) &nbsp;<span class="val" id="wear-val">0</span></label>
+        <input type="range" id="tool_wear" min="0" max="260" value="0" step="5">
+      </div>
+
+      <div class="panel-title">Vehicle (optional)</div>
+      <div class="vehicle-grid">
+        <input type="text" id="v-make" placeholder="Make (Toyota)">
+        <input type="text" id="v-model" placeholder="Model (Camry)">
+      </div>
+      <div class="field" style="margin-bottom:0;">
+        <input type="text" id="v-year" placeholder="Year (2020)">
+      </div>
+
+      <button class="run-btn" id="run-btn">▶ Run Diagnostic</button>
+      <div id="error-box"></div>
+    </div>
+
+    <!-- ── OUTPUT PANEL ──────────────────────────────── -->
+    <div id="output">
+      <div class="empty-state">
+        <div class="icon">⛭</div>
+        <h2>No diagnostic run yet</h2>
+        <p>Add fault codes and adjust telemetry on the left, then run a diagnostic to see failure probability, remaining useful life, and driver recommendations.</p>
+      </div>
+    </div>
+
+  </div>
+
+<script>
+const $ = (id) => document.getElementById(id);
+let faultCodes = [];
+
+// ── Slider live-updates ──────────────────────────────
+const bindSlider = (sliderId, labelId, fmt) => {
+  const s = $(sliderId), l = $(labelId);
+  const update = () => { l.textContent = fmt ? fmt(s.value) : s.value; };
+  s.addEventListener('input', update);
+  update();
+};
+bindSlider('rpm', 'rpm-val');
+bindSlider('torque', 'torque-val');
+bindSlider('tool_wear', 'wear-val');
+
+$('proc_temp').addEventListener('input', () => {
+  const k = $('proc_temp').value;
+  $('temp-val').textContent = k;
+  $('temp-c').textContent = (k - 273.15).toFixed(1);
+});
+$('temp-val').textContent = $('proc_temp').value;
+$('temp-c').textContent = (310 - 273.15).toFixed(1);
+
+// ── Fault code chips ──────────────────────────────────
+function renderChips(){
+  $('code-chips').innerHTML = faultCodes.map(c =>
+    `<span class="code-chip">${c}<button onclick="removeCode('${c}')">×</button></span>`
+  ).join('');
+}
+function addCode(code){
+  code = code.trim().toUpperCase();
+  if(code && !faultCodes.includes(code)){
+    faultCodes.push(code);
+    renderChips();
+  }
+}
+function removeCode(code){
+  faultCodes = faultCodes.filter(c => c !== code);
+  renderChips();
+}
+$('code-input').addEventListener('keydown', (e) => {
+  if(e.key === 'Enter'){
+    e.preventDefault();
+    addCode($('code-input').value);
+    $('code-input').value = '';
+  }
+});
+document.querySelectorAll('.preset-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const codes = btn.dataset.codes;
+    faultCodes = codes ? codes.split(',') : [];
+    renderChips();
+  });
+});
+
+// ── Backend health check ─────────────────────────────
+async function checkHealth(){
+  const base = $('api-base').value.replace(/\/$/, '');
+  const dot = $('status-dot');
+  const txt = $('conn-status');
+  try{
+    const res = await fetch(`${base}/health`, { signal: AbortSignal.timeout(4000) });
+    const data = await res.json();
+    dot.className = 'status-dot live';
+    txt.textContent = `connected · ${data.obd_codes_loaded.toLocaleString()} codes loaded`;
+    return true;
+  }catch(err){
+    dot.className = 'status-dot down';
+    txt.textContent = 'backend unreachable';
+    return false;
+  }
+}
+checkHealth();
+$('api-base').addEventListener('change', checkHealth);
+
+// ── Severity → color class helper ────────────────────
+function sevClass(sev){
+  if(sev === 'Critical') return 'crit';
+  if(sev === 'High') return 'warn';
+  return 'ok';
+}
+function tripClass(status){
+  if(status === 'STOP') return 'stop';
+  if(status === 'CAUTION') return 'caution';
+  return 'ok';
+}
+
+// ── Gauge SVG (Tata Blue arc dial) ───────────────────
+function gaugeSVG(pct, color){
+  const r = 34, c = 2 * Math.PI * r;
+  const offset = c - (Math.min(Math.max(pct,0),100)/100) * c;
+  return `
+  <svg width="84" height="84" viewBox="0 0 84 84">
+    <circle cx="42" cy="42" r="${r}" fill="none" stroke="#E8F1FB" stroke-width="7"/>
+    <circle cx="42" cy="42" r="${r}" fill="none" stroke="${color}" stroke-width="7"
+      stroke-dasharray="${c}" stroke-dashoffset="${offset}"
+      stroke-linecap="round" transform="rotate(-90 42 42)"
+      style="filter:drop-shadow(0 0 3px ${color}44); transition: stroke-dashoffset 0.6s ease;"/>
+    <text x="42" y="47" text-anchor="middle" font-family="JetBrains Mono" font-size="15"
+      font-weight="700" fill="${color}">${Math.round(pct)}%</text>
+  </svg>`;
+}
+
+// ── Run diagnostic ────────────────────────────────────
+$('run-btn').addEventListener('click', runDiagnostic);
+
+async function runDiagnostic(){
+  const base = $('api-base').value.replace(/\/$/, '');
+  const btn = $('run-btn');
+  $('error-box').innerHTML = '';
+  btn.disabled = true;
+  btn.textContent = '◷ RUNNING…';
+
+  const body = {
+    fault_codes: faultCodes,
+    rpm: Number($('rpm').value),
+    process_temp: Number($('proc_temp').value),
+    temperature: Number($('proc_temp').value) - 10,
+    torque: Number($('torque').value),
+    tool_wear: Number($('tool_wear').value),
+  };
+  const make = $('v-make').value.trim();
+  const model = $('v-model').value.trim();
+  const year = $('v-year').value.trim();
+  if(make) body.vehicle_make = make;
+  if(model) body.vehicle_model = model;
+  if(year) body.vehicle_year = Number(year);
+
+  try{
+    const res = await fetch(`${base}/diagnose`, {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify(body),
+      signal: AbortSignal.timeout(15000),
+    });
+    if(!res.ok){
+      const err = await res.json().catch(()=>({detail:res.statusText}));
+      throw new Error(err.detail || `HTTP ${res.status}`);
+    }
+    const data = await res.json();
+    renderOutput(data);
+  }catch(err){
+    $('error-box').innerHTML = `<div class="error-banner">⚠ ${err.message || err}</div>`;
+  }finally{
+    btn.disabled = false;
+    btn.textContent = '▶ Run Diagnostic';
+  }
+}
+
+function renderOutput(d){
+  const failPct = (d.failure_probability * 100);
+  const rulPct  = d.remaining_life_pct;
+  const compRiskPct = ({Low:15, Medium:45, High:70, Critical:92, Unknown:30})[d.component_risk] ?? 30;
+
+  const failColor = failPct > 60 ? 'var(--crit)' : failPct > 30 ? 'var(--warn)' : 'var(--tata-blue)';
+  const rulColor  = rulPct < 25 ? 'var(--crit)' : rulPct < 55 ? 'var(--warn)' : 'var(--tata-blue)';
+  const compColor = compRiskPct > 65 ? 'var(--crit)' : compRiskPct > 40 ? 'var(--warn)' : 'var(--tata-blue)';
+
+  // Resolve CSS var() to actual hex for SVG (SVG can't resolve CSS custom props reliably cross-browser in stroke)
+  const resolve = (v) => getComputedStyle(document.documentElement).getPropertyValue(v.replace('var(','').replace(')','')).trim();
+  const failHex = resolve(failColor);
+  const rulHex  = resolve(rulColor);
+  const compHex = resolve(compColor);
+
+  const faultRows = (d.obd_details || []).map(f => `
+    <div class="fault-row">
+      <div class="fault-code">${f.code}</div>
+      <div class="fault-desc">${f.description}</div>
+      <div class="fault-sev sev-${f.severity}">${f.severity}</div>
+    </div>
+  `).join('') || '<div style="color:var(--ink-dim); font-size:12.5px;">No fault codes supplied — telemetry-only health check.</div>';
+
+  const actions = (d.maintenance_actions || []).map(a => `<li>${a}</li>`).join('');
+
+  $('output').innerHTML = `
+    <div class="trip-banner ${tripClass(d.trip_status)}">
+      <span class="dot"></span>
+      TRIP STATUS: ${d.trip_status} &nbsp;·&nbsp; ${d.maintenance_urgency} priority &nbsp;·&nbsp; ${d.estimated_repair_window}
+    </div>
+
+    <div class="output-grid">
+      <div class="gauge-card">
+        ${gaugeSVG(failPct, failHex)}
+        <div class="label">Failure Probability</div>
+        <div class="value" style="color:${failHex}">${d.failure_risk}</div>
+      </div>
+      <div class="gauge-card">
+        ${gaugeSVG(rulPct, rulHex)}
+        <div class="label">Remaining Life</div>
+        <div class="value" style="color:${rulHex}">${d.remaining_life} cycles · ${d.rul_category}</div>
+      </div>
+      <div class="gauge-card">
+        ${gaugeSVG(compRiskPct, compHex)}
+        <div class="label">Component Risk</div>
+        <div class="value" style="color:${compHex}">${d.component_risk}</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="detail-section">
+        <h3>Driver Advice</h3>
+        <div class="advice-text">${d.driver_advice}</div>
+      </div>
+
+      <div class="detail-section">
+        <h3>Fault Codes (${(d.fault_codes||[]).length})</h3>
+        ${faultRows}
+      </div>
+
+      <div class="detail-section">
+        <h3>Maintenance Actions</h3>
+        <ul class="action-list">${actions}</ul>
+      </div>
+
+      ${d.nhtsa_recall_check_url ? `
+      <div class="detail-section">
+        <h3>NHTSA Recall Check</h3>
+        <div style="font-size:12px;"><a href="${d.nhtsa_recall_check_url}" target="_blank">${d.nhtsa_recall_check_url}</a></div>
+      </div>` : ''}
+    </div>
+  `;
+}
+</script>
+
+</body>
+</html>

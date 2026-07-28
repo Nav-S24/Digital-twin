@@ -1,0 +1,91 @@
+{
+  "vehicle_id": "Vehicle_0001",
+  "route": {
+    "distance_km": 412.4,
+    "duration_min": 496.4,
+    "elevation_gain_m": 358.7,
+    "traffic_level": "Light",
+    "coordinates": null,
+    "source_mode": "mock",
+    "is_alternate": false
+  },
+  "weather": {
+    "temperature_c": 18.2,
+    "rain_mm": 0.0,
+    "humidity_pct": 65.2,
+    "wind_kph": 29.9,
+    "condition": "Clear",
+    "alerts": [],
+    "weather_risk_score": 9.9,
+    "source_mode": "mock"
+  },
+  "fuel": {
+    "fuel_required_l": 22.91,
+    "fuel_available_l": 42.0,
+    "fuel_sufficient": true,
+    "fuel_cost": 2492.61,
+    "refueling_stops_needed": 0,
+    "price_per_litre": 108.8,
+    "source_mode": "mock"
+  },
+  "risk": {
+    "trip_status": "GO",
+    "risk_score": 11.4,
+    "contributing_factors": [
+      "All health, failure-risk, weather, driver behaviour, and fuel checks passed comfortably."
+    ],
+    "rule_trace": [
+      "health=88.0 failure_p=0.12 rul_km=2480 weather_risk=9.9 driver_behaviour=90.0 fuel_ok=True twin_critical=False twin_warning=False active_faults=False",
+      "weighted_risk=health:0.4*12.0 + failure:0.3*12.0 + weather:0.15*9.9 + driver:0.15*10.0 -> composite=11.4",
+      "Decision: GO (all checks within safe thresholds)."
+    ]
+  },
+  "recommendations": [
+    "Fuel level is sufficient; refueling en route is optional.",
+    "Long-distance trip — plan rest breaks every 2 hours to avoid driver fatigue."
+  ],
+  "natural_language_summary": "Your vehicle is ready for the trip. Vehicle health is 88%. The engine and key components are performing normally. Fuel is sufficient for the planned journey. Weather conditions along the route look favorable. Estimated fuel cost is ₹2,493 over 412.4 km. Key recommendation: Fuel level is sufficient; refueling en route is optional. Overall recommendation: GO.",
+  "recommendations_detailed": [
+    {
+      "priority": "Low",
+      "text": "Fuel level is sufficient; refueling en route is optional."
+    },
+    {
+      "priority": "Low",
+      "text": "Long-distance trip — plan rest breaks every 2 hours to avoid driver fatigue."
+    }
+  ],
+  "service_centre_recommendation": null,
+  "alternate_route": null,
+  "alternate_route_reason": null,
+  "explanation": {
+    "factors": [
+      {
+        "label": "Vehicle Health",
+        "value": "88% (Good)",
+        "status": "Good"
+      },
+      {
+        "label": "Failure Risk",
+        "value": "Low",
+        "status": "Good"
+      },
+      {
+        "label": "Weather",
+        "value": "Clear",
+        "status": "Good"
+      },
+      {
+        "label": "Driver Behaviour",
+        "value": "Safe (90/100)",
+        "status": "Good"
+      },
+      {
+        "label": "Fuel",
+        "value": "Sufficient",
+        "status": "Good"
+      }
+    ],
+    "overall_statement": "GO — all systems and conditions are within safe limits."
+  }
+}

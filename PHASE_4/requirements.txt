@@ -1,0 +1,13 @@
+# Vehicle Digital Twin — Python backend dependencies
+fastapi==0.111.0
+uvicorn[standard]==0.29.0
+pydantic==2.7.1
+pandas>=2.3.0
+numpy>=2.0.0
+plotly==5.22.0
+scikit-learn==1.5.0
+httpx==0.27.0          # async HTTP client (for testing)
+python-multipart==0.0.9
+
+# --- Testing -----------------------------------------------------------
+pytest>=8.0

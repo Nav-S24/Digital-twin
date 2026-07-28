@@ -1,0 +1,8 @@
+{system_instruction}
+
+Context:
+{context}
+
+Question: {question}
+
+Answer (cite sources as [Source N] where relevant):

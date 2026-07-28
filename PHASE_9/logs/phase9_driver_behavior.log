@@ -1,0 +1,178 @@
+2026-07-10 16:02:54 | INFO     | pipeline | Running full Phase 9 pipeline on source: /tmp/pytest-of-root/pytest-0/test_driver_profile0/sample.csv
+2026-07-10 16:02:54 | INFO     | preprocessing.data_loader | Starting VED preprocessing pipeline
+2026-07-10 16:02:54 | INFO     | preprocessing.data_loader | Loaded 30 rows from sample.csv
+2026-07-10 16:02:54 | INFO     | preprocessing.data_loader | Preprocessing complete: 30 rows, 1 vehicles, 1 trips
+2026-07-10 16:02:54 | INFO     | feature_engineering.feature_extractor | Extracted features for 1 trips
+2026-07-10 16:02:54 | INFO     | detection.behavior_detector | Detected 1 total events across 1 trips
+2026-07-10 16:02:54 | INFO     | scoring.driver_scorer | Scored 1 trips (mean score=100.00)
+2026-07-10 16:02:54 | INFO     | profiling.driver_profiler | Trip profile distribution: {'Safe Driver': 1}
+2026-07-10 16:02:54 | INFO     | pipeline | Pipeline run complete: 1 trips, 1 drivers, 1 events
+2026-07-10 16:02:54 | INFO     | pipeline | Running full Phase 9 pipeline on source: /tmp/pytest-of-root/pytest-0/test_driver_score0/sample.csv
+2026-07-10 16:02:54 | INFO     | preprocessing.data_loader | Starting VED preprocessing pipeline
+2026-07-10 16:02:54 | INFO     | preprocessing.data_loader | Loaded 30 rows from sample.csv
+2026-07-10 16:02:54 | INFO     | preprocessing.data_loader | Preprocessing complete: 30 rows, 1 vehicles, 1 trips
+2026-07-10 16:02:54 | INFO     | feature_engineering.feature_extractor | Extracted features for 1 trips
+2026-07-10 16:02:54 | INFO     | detection.behavior_detector | Detected 1 total events across 1 trips
+2026-07-10 16:02:54 | INFO     | scoring.driver_scorer | Scored 1 trips (mean score=100.00)
+2026-07-10 16:02:54 | INFO     | profiling.driver_profiler | Trip profile distribution: {'Safe Driver': 1}
+2026-07-10 16:02:54 | INFO     | pipeline | Pipeline run complete: 1 trips, 1 drivers, 1 events
+2026-07-10 16:02:54 | INFO     | pipeline | Running full Phase 9 pipeline on source: /tmp/pytest-of-root/pytest-0/test_driver_coaching0/sample.csv
+2026-07-10 16:02:54 | INFO     | preprocessing.data_loader | Starting VED preprocessing pipeline
+2026-07-10 16:02:54 | INFO     | preprocessing.data_loader | Loaded 30 rows from sample.csv
+2026-07-10 16:02:54 | INFO     | preprocessing.data_loader | Preprocessing complete: 30 rows, 1 vehicles, 1 trips
+2026-07-10 16:02:54 | INFO     | feature_engineering.feature_extractor | Extracted features for 1 trips
+2026-07-10 16:02:54 | INFO     | detection.behavior_detector | Detected 1 total events across 1 trips
+2026-07-10 16:02:54 | INFO     | scoring.driver_scorer | Scored 1 trips (mean score=100.00)
+2026-07-10 16:02:54 | INFO     | profiling.driver_profiler | Trip profile distribution: {'Safe Driver': 1}
+2026-07-10 16:02:54 | INFO     | pipeline | Pipeline run complete: 1 trips, 1 drivers, 1 events
+2026-07-10 16:02:54 | INFO     | pipeline | Running full Phase 9 pipeline on source: /tmp/pytest-of-root/pytest-0/test_driver_statistics0/sample.csv
+2026-07-10 16:02:54 | INFO     | preprocessing.data_loader | Starting VED preprocessing pipeline
+2026-07-10 16:02:54 | INFO     | preprocessing.data_loader | Loaded 30 rows from sample.csv
+2026-07-10 16:02:54 | INFO     | preprocessing.data_loader | Preprocessing complete: 30 rows, 1 vehicles, 1 trips
+2026-07-10 16:02:54 | INFO     | feature_engineering.feature_extractor | Extracted features for 1 trips
+2026-07-10 16:02:54 | INFO     | detection.behavior_detector | Detected 1 total events across 1 trips
+2026-07-10 16:02:54 | INFO     | scoring.driver_scorer | Scored 1 trips (mean score=100.00)
+2026-07-10 16:02:54 | INFO     | profiling.driver_profiler | Trip profile distribution: {'Safe Driver': 1}
+2026-07-10 16:02:54 | INFO     | pipeline | Pipeline run complete: 1 trips, 1 drivers, 1 events
+2026-07-10 16:02:55 | INFO     | pipeline | Running full Phase 9 pipeline on source: /tmp/pytest-of-root/pytest-0/test_driver_trips0/sample.csv
+2026-07-10 16:02:55 | INFO     | preprocessing.data_loader | Starting VED preprocessing pipeline
+2026-07-10 16:02:55 | INFO     | preprocessing.data_loader | Loaded 30 rows from sample.csv
+2026-07-10 16:02:55 | INFO     | preprocessing.data_loader | Preprocessing complete: 30 rows, 1 vehicles, 1 trips
+2026-07-10 16:02:55 | INFO     | feature_engineering.feature_extractor | Extracted features for 1 trips
+2026-07-10 16:02:55 | INFO     | detection.behavior_detector | Detected 1 total events across 1 trips
+2026-07-10 16:02:55 | INFO     | scoring.driver_scorer | Scored 1 trips (mean score=100.00)
+2026-07-10 16:02:55 | INFO     | profiling.driver_profiler | Trip profile distribution: {'Safe Driver': 1}
+2026-07-10 16:02:55 | INFO     | pipeline | Pipeline run complete: 1 trips, 1 drivers, 1 events
+2026-07-10 16:02:55 | INFO     | pipeline | Running full Phase 9 pipeline on source: /tmp/pytest-of-root/pytest-0/test_unknown_driver_returns_400/sample.csv
+2026-07-10 16:02:55 | INFO     | preprocessing.data_loader | Starting VED preprocessing pipeline
+2026-07-10 16:02:55 | INFO     | preprocessing.data_loader | Loaded 30 rows from sample.csv
+2026-07-10 16:02:55 | INFO     | preprocessing.data_loader | Preprocessing complete: 30 rows, 1 vehicles, 1 trips
+2026-07-10 16:02:55 | INFO     | feature_engineering.feature_extractor | Extracted features for 1 trips
+2026-07-10 16:02:55 | INFO     | detection.behavior_detector | Detected 1 total events across 1 trips
+2026-07-10 16:02:55 | INFO     | scoring.driver_scorer | Scored 1 trips (mean score=100.00)
+2026-07-10 16:02:55 | INFO     | profiling.driver_profiler | Trip profile distribution: {'Safe Driver': 1}
+2026-07-10 16:02:55 | INFO     | pipeline | Pipeline run complete: 1 trips, 1 drivers, 1 events
+2026-07-10 16:02:55 | WARNING  | coaching.coaching_engine | LLM coaching failed, falling back to rule-based cards: simulated LLM failure
+2026-07-10 16:02:55 | INFO     | detection.behavior_detector | Detected 16 total events across 3 trips
+2026-07-10 16:02:55 | INFO     | feature_engineering.feature_extractor | Extracted features for 3 trips
+2026-07-10 16:02:55 | INFO     | preprocessing.data_loader | Dropped 1 rows missing core columns
+2026-07-10 16:02:55 | INFO     | preprocessing.data_loader | Removed 1 duplicate rows
+2026-07-10 16:02:55 | INFO     | preprocessing.data_loader | Dropped 1 rows with implausible GPS coordinates
+2026-07-10 16:02:55 | INFO     | preprocessing.data_loader | Dropped 1 trips with fewer than 10 points
+2026-07-10 16:02:55 | INFO     | preprocessing.data_loader | Starting VED preprocessing pipeline
+2026-07-10 16:02:55 | INFO     | preprocessing.data_loader | Loaded 20 rows from sample.csv
+2026-07-10 16:02:55 | INFO     | preprocessing.data_loader | Preprocessing complete: 20 rows, 1 vehicles, 1 trips
+2026-07-10 16:02:55 | INFO     | feature_engineering.feature_extractor | Extracted features for 3 trips
+2026-07-10 16:02:55 | INFO     | detection.behavior_detector | Detected 16 total events across 3 trips
+2026-07-10 16:02:55 | INFO     | scoring.driver_scorer | Scored 3 trips (mean score=81.63)
+2026-07-10 16:02:55 | INFO     | feature_engineering.feature_extractor | Extracted features for 3 trips
+2026-07-10 16:02:55 | INFO     | detection.behavior_detector | Detected 16 total events across 3 trips
+2026-07-10 16:02:55 | INFO     | scoring.driver_scorer | Scored 3 trips (mean score=81.63)
+2026-07-10 16:02:55 | INFO     | profiling.driver_profiler | Trip profile distribution: {'Normal Driver': 2, 'Safe Driver': 1}
+2026-07-10 16:02:55 | INFO     | feature_engineering.feature_extractor | Extracted features for 3 trips
+2026-07-10 16:02:55 | INFO     | detection.behavior_detector | Detected 16 total events across 3 trips
+2026-07-10 16:02:55 | INFO     | scoring.driver_scorer | Scored 3 trips (mean score=81.63)
+2026-07-10 16:02:55 | INFO     | profiling.driver_profiler | Trip profile distribution: {'Normal Driver': 2, 'Safe Driver': 1}
+2026-07-10 16:02:56 | INFO     | feature_engineering.feature_extractor | Extracted features for 3 trips
+2026-07-10 16:02:56 | INFO     | detection.behavior_detector | Detected 16 total events across 3 trips
+2026-07-10 16:02:56 | INFO     | scoring.driver_scorer | Scored 3 trips (mean score=81.63)
+2026-07-10 16:02:56 | INFO     | profiling.driver_profiler | Trip profile distribution: {'Normal Driver': 2, 'Safe Driver': 1}
+2026-07-10 16:03:04 | INFO     | pipeline | Running full Phase 9 pipeline on source: data/raw/VED_sample_small.csv
+2026-07-10 16:03:04 | INFO     | preprocessing.data_loader | Starting VED preprocessing pipeline
+2026-07-10 16:03:04 | INFO     | preprocessing.data_loader | Loaded 7999 rows from VED_sample_small.csv
+2026-07-10 16:03:04 | INFO     | preprocessing.data_loader | Removed 801 rows with implausible GPS speed jumps
+2026-07-10 16:03:04 | INFO     | preprocessing.data_loader | Preprocessing complete: 7198 rows, 15 vehicles, 22 trips
+2026-07-10 16:03:04 | INFO     | feature_engineering.feature_extractor | Extracted features for 22 trips
+2026-07-10 16:03:05 | INFO     | detection.behavior_detector | Detected 684 total events across 22 trips
+2026-07-10 16:03:05 | INFO     | scoring.driver_scorer | Scored 22 trips (mean score=81.98)
+2026-07-10 16:03:05 | INFO     | profiling.driver_profiler | Trip profile distribution: {'Safe Driver': 10, 'Eco Driver': 7, 'Normal Driver': 3, 'High Risk Driver': 2}
+2026-07-10 16:03:05 | INFO     | pipeline | Pipeline run complete: 22 trips, 15 drivers, 684 events
+2026-07-12 15:36:50 | INFO     | pipeline | Running full Phase 9 pipeline on source: /tmp/pytest-of-root/pytest-8/test_driver_profile0/sample.csv
+2026-07-12 15:36:50 | INFO     | preprocessing.data_loader | Starting VED preprocessing pipeline
+2026-07-12 15:36:50 | INFO     | preprocessing.data_loader | Loaded 30 rows from sample.csv
+2026-07-12 15:36:50 | INFO     | preprocessing.data_loader | Preprocessing complete: 30 rows, 1 vehicles, 1 trips
+2026-07-12 15:36:50 | INFO     | feature_engineering.feature_extractor | Extracted features for 1 trips
+2026-07-12 15:36:50 | INFO     | detection.behavior_detector | Detected 1 total events across 1 trips
+2026-07-12 15:36:50 | INFO     | scoring.driver_scorer | Scored 1 trips (mean score=100.00)
+2026-07-12 15:36:50 | INFO     | profiling.driver_profiler | Trip profile distribution: {'Safe Driver': 1}
+2026-07-12 15:36:50 | INFO     | pipeline | Pipeline run complete: 1 trips, 1 drivers, 1 events
+2026-07-12 15:36:50 | INFO     | pipeline | Running full Phase 9 pipeline on source: /tmp/pytest-of-root/pytest-8/test_driver_score0/sample.csv
+2026-07-12 15:36:50 | INFO     | preprocessing.data_loader | Starting VED preprocessing pipeline
+2026-07-12 15:36:50 | INFO     | preprocessing.data_loader | Loaded 30 rows from sample.csv
+2026-07-12 15:36:50 | INFO     | preprocessing.data_loader | Preprocessing complete: 30 rows, 1 vehicles, 1 trips
+2026-07-12 15:36:50 | INFO     | feature_engineering.feature_extractor | Extracted features for 1 trips
+2026-07-12 15:36:50 | INFO     | detection.behavior_detector | Detected 1 total events across 1 trips
+2026-07-12 15:36:50 | INFO     | scoring.driver_scorer | Scored 1 trips (mean score=100.00)
+2026-07-12 15:36:50 | INFO     | profiling.driver_profiler | Trip profile distribution: {'Safe Driver': 1}
+2026-07-12 15:36:50 | INFO     | pipeline | Pipeline run complete: 1 trips, 1 drivers, 1 events
+2026-07-12 15:36:50 | INFO     | pipeline | Running full Phase 9 pipeline on source: /tmp/pytest-of-root/pytest-8/test_driver_coaching0/sample.csv
+2026-07-12 15:36:50 | INFO     | preprocessing.data_loader | Starting VED preprocessing pipeline
+2026-07-12 15:36:50 | INFO     | preprocessing.data_loader | Loaded 30 rows from sample.csv
+2026-07-12 15:36:50 | INFO     | preprocessing.data_loader | Preprocessing complete: 30 rows, 1 vehicles, 1 trips
+2026-07-12 15:36:50 | INFO     | feature_engineering.feature_extractor | Extracted features for 1 trips
+2026-07-12 15:36:50 | INFO     | detection.behavior_detector | Detected 1 total events across 1 trips
+2026-07-12 15:36:50 | INFO     | scoring.driver_scorer | Scored 1 trips (mean score=100.00)
+2026-07-12 15:36:50 | INFO     | profiling.driver_profiler | Trip profile distribution: {'Safe Driver': 1}
+2026-07-12 15:36:50 | INFO     | pipeline | Pipeline run complete: 1 trips, 1 drivers, 1 events
+2026-07-12 15:36:50 | INFO     | pipeline | Running full Phase 9 pipeline on source: /tmp/pytest-of-root/pytest-8/test_driver_statistics0/sample.csv
+2026-07-12 15:36:50 | INFO     | preprocessing.data_loader | Starting VED preprocessing pipeline
+2026-07-12 15:36:50 | INFO     | preprocessing.data_loader | Loaded 30 rows from sample.csv
+2026-07-12 15:36:50 | INFO     | preprocessing.data_loader | Preprocessing complete: 30 rows, 1 vehicles, 1 trips
+2026-07-12 15:36:50 | INFO     | feature_engineering.feature_extractor | Extracted features for 1 trips
+2026-07-12 15:36:50 | INFO     | detection.behavior_detector | Detected 1 total events across 1 trips
+2026-07-12 15:36:50 | INFO     | scoring.driver_scorer | Scored 1 trips (mean score=100.00)
+2026-07-12 15:36:50 | INFO     | profiling.driver_profiler | Trip profile distribution: {'Safe Driver': 1}
+2026-07-12 15:36:50 | INFO     | pipeline | Pipeline run complete: 1 trips, 1 drivers, 1 events
+2026-07-12 15:36:50 | INFO     | pipeline | Running full Phase 9 pipeline on source: /tmp/pytest-of-root/pytest-8/test_driver_trips0/sample.csv
+2026-07-12 15:36:50 | INFO     | preprocessing.data_loader | Starting VED preprocessing pipeline
+2026-07-12 15:36:50 | INFO     | preprocessing.data_loader | Loaded 30 rows from sample.csv
+2026-07-12 15:36:50 | INFO     | preprocessing.data_loader | Preprocessing complete: 30 rows, 1 vehicles, 1 trips
+2026-07-12 15:36:50 | INFO     | feature_engineering.feature_extractor | Extracted features for 1 trips
+2026-07-12 15:36:50 | INFO     | detection.behavior_detector | Detected 1 total events across 1 trips
+2026-07-12 15:36:50 | INFO     | scoring.driver_scorer | Scored 1 trips (mean score=100.00)
+2026-07-12 15:36:50 | INFO     | profiling.driver_profiler | Trip profile distribution: {'Safe Driver': 1}
+2026-07-12 15:36:50 | INFO     | pipeline | Pipeline run complete: 1 trips, 1 drivers, 1 events
+2026-07-12 15:36:50 | INFO     | pipeline | Running full Phase 9 pipeline on source: /tmp/pytest-of-root/pytest-8/test_unknown_driver_returns_400/sample.csv
+2026-07-12 15:36:50 | INFO     | preprocessing.data_loader | Starting VED preprocessing pipeline
+2026-07-12 15:36:50 | INFO     | preprocessing.data_loader | Loaded 30 rows from sample.csv
+2026-07-12 15:36:50 | INFO     | preprocessing.data_loader | Preprocessing complete: 30 rows, 1 vehicles, 1 trips
+2026-07-12 15:36:50 | INFO     | feature_engineering.feature_extractor | Extracted features for 1 trips
+2026-07-12 15:36:50 | INFO     | detection.behavior_detector | Detected 1 total events across 1 trips
+2026-07-12 15:36:50 | INFO     | scoring.driver_scorer | Scored 1 trips (mean score=100.00)
+2026-07-12 15:36:50 | INFO     | profiling.driver_profiler | Trip profile distribution: {'Safe Driver': 1}
+2026-07-12 15:36:50 | INFO     | pipeline | Pipeline run complete: 1 trips, 1 drivers, 1 events
+2026-07-12 15:36:50 | WARNING  | coaching.coaching_engine | LLM coaching failed, falling back to rule-based cards: simulated LLM failure
+2026-07-12 15:36:50 | INFO     | detection.behavior_detector | Detected 16 total events across 3 trips
+2026-07-12 15:36:51 | INFO     | feature_engineering.feature_extractor | Extracted features for 3 trips
+2026-07-12 15:36:51 | INFO     | preprocessing.data_loader | Dropped 1 rows missing core columns
+2026-07-12 15:36:51 | INFO     | preprocessing.data_loader | Removed 1 duplicate rows
+2026-07-12 15:36:51 | INFO     | preprocessing.data_loader | Dropped 1 rows with implausible GPS coordinates
+2026-07-12 15:36:51 | INFO     | preprocessing.data_loader | Dropped 1 trips with fewer than 10 points
+2026-07-12 15:36:51 | INFO     | preprocessing.data_loader | Starting VED preprocessing pipeline
+2026-07-12 15:36:51 | INFO     | preprocessing.data_loader | Loaded 20 rows from sample.csv
+2026-07-12 15:36:51 | INFO     | preprocessing.data_loader | Preprocessing complete: 20 rows, 1 vehicles, 1 trips
+2026-07-12 15:36:51 | INFO     | feature_engineering.feature_extractor | Extracted features for 3 trips
+2026-07-12 15:36:51 | INFO     | detection.behavior_detector | Detected 16 total events across 3 trips
+2026-07-12 15:36:51 | INFO     | scoring.driver_scorer | Scored 3 trips (mean score=81.63)
+2026-07-12 15:36:51 | INFO     | feature_engineering.feature_extractor | Extracted features for 3 trips
+2026-07-12 15:36:51 | INFO     | detection.behavior_detector | Detected 16 total events across 3 trips
+2026-07-12 15:36:51 | INFO     | scoring.driver_scorer | Scored 3 trips (mean score=81.63)
+2026-07-12 15:36:51 | INFO     | profiling.driver_profiler | Trip profile distribution: {'Normal Driver': 2, 'Safe Driver': 1}
+2026-07-12 15:36:51 | INFO     | feature_engineering.feature_extractor | Extracted features for 3 trips
+2026-07-12 15:36:51 | INFO     | detection.behavior_detector | Detected 16 total events across 3 trips
+2026-07-12 15:36:51 | INFO     | scoring.driver_scorer | Scored 3 trips (mean score=81.63)
+2026-07-12 15:36:51 | INFO     | profiling.driver_profiler | Trip profile distribution: {'Normal Driver': 2, 'Safe Driver': 1}
+2026-07-12 15:36:51 | INFO     | feature_engineering.feature_extractor | Extracted features for 3 trips
+2026-07-12 15:36:51 | INFO     | detection.behavior_detector | Detected 16 total events across 3 trips
+2026-07-12 15:36:51 | INFO     | scoring.driver_scorer | Scored 3 trips (mean score=81.63)
+2026-07-12 15:36:51 | INFO     | profiling.driver_profiler | Trip profile distribution: {'Normal Driver': 2, 'Safe Driver': 1}
+2026-07-27 13:45:15 | INFO     | pipeline | Running full Phase 9 pipeline on source: data/raw/VED_sample_small.csv
+2026-07-27 13:45:15 | INFO     | preprocessing.data_loader | Starting VED preprocessing pipeline
+2026-07-27 13:45:16 | INFO     | preprocessing.data_loader | Loaded 7999 rows from VED_sample_small.csv
+2026-07-27 13:45:16 | INFO     | preprocessing.data_loader | Removed 801 rows with implausible GPS speed jumps
+2026-07-27 13:45:16 | INFO     | preprocessing.data_loader | Preprocessing complete: 7198 rows, 15 vehicles, 22 trips
+2026-07-27 13:45:17 | INFO     | feature_engineering.feature_extractor | Extracted features for 22 trips
+2026-07-27 13:45:18 | INFO     | detection.behavior_detector | Detected 684 total events across 22 trips
+2026-07-27 13:45:18 | INFO     | scoring.driver_scorer | Scored 22 trips (mean score=81.98)
+2026-07-27 13:45:18 | INFO     | profiling.driver_profiler | Trip profile distribution: {'Safe Driver': 10, 'Eco Driver': 7, 'Normal Driver': 3, 'High Risk Driver': 2}
+2026-07-27 13:45:18 | INFO     | pipeline | Pipeline run complete: 22 trips, 15 drivers, 684 events

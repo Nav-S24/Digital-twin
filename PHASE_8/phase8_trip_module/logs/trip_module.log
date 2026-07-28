@@ -1,0 +1,79 @@
+2026-07-11 08:53:06 | INFO     | trip_engine | Assessing trip for vehicle=TEST_001 Pune -> Mumbai
+2026-07-11 08:53:06 | INFO     | route_engine | Nominatim geocoding unavailable (403 Client Error: Forbidden for url: https://nominatim.openstreetmap.org/search?q=Pune&format=json&limit=1); will use mock fallback.
+2026-07-11 08:53:07 | INFO     | route_engine | Nominatim geocoding unavailable (403 Client Error: Forbidden for url: https://nominatim.openstreetmap.org/search?q=Mumbai&format=json&limit=1); will use mock fallback.
+2026-07-11 08:53:07 | WARNING  | route_engine | Geocoding failed for 'Pune' -> 'Mumbai'; using mock route.
+2026-07-11 08:53:07 | INFO     | service_centre_engine | Loaded 10 service centres from data/service_centres.json.
+2026-07-11 08:53:07 | INFO     | trip_engine | Assessing trip for vehicle=TEST_001 Pune -> Mumbai
+2026-07-11 08:53:07 | INFO     | route_engine | Nominatim geocoding unavailable (403 Client Error: Forbidden for url: https://nominatim.openstreetmap.org/search?q=Pune&format=json&limit=1); will use mock fallback.
+2026-07-11 08:53:07 | INFO     | route_engine | Nominatim geocoding unavailable (403 Client Error: Forbidden for url: https://nominatim.openstreetmap.org/search?q=Mumbai&format=json&limit=1); will use mock fallback.
+2026-07-11 08:53:07 | WARNING  | route_engine | Geocoding failed for 'Pune' -> 'Mumbai'; using mock route.
+2026-07-11 08:53:07 | INFO     | trip_engine | Assessing trip for vehicle=TEST_001 Pune -> Mumbai
+2026-07-11 08:53:07 | INFO     | route_engine | Nominatim geocoding unavailable (403 Client Error: Forbidden for url: https://nominatim.openstreetmap.org/search?q=Pune&format=json&limit=1); will use mock fallback.
+2026-07-11 08:53:07 | INFO     | route_engine | Nominatim geocoding unavailable (403 Client Error: Forbidden for url: https://nominatim.openstreetmap.org/search?q=Mumbai&format=json&limit=1); will use mock fallback.
+2026-07-11 08:53:07 | WARNING  | route_engine | Geocoding failed for 'Pune' -> 'Mumbai'; using mock route.
+2026-07-11 08:53:07 | INFO     | service_centre_engine | Loaded 10 service centres from data/service_centres.json.
+2026-07-11 08:53:07 | INFO     | route_engine | Nominatim geocoding unavailable (403 Client Error: Forbidden for url: https://nominatim.openstreetmap.org/search?q=Pune&format=json&limit=1); will use mock fallback.
+2026-07-11 08:53:07 | INFO     | route_engine | Nominatim geocoding unavailable (403 Client Error: Forbidden for url: https://nominatim.openstreetmap.org/search?q=Mumbai&format=json&limit=1); will use mock fallback.
+2026-07-11 08:53:07 | INFO     | route_engine | Nominatim geocoding unavailable (403 Client Error: Forbidden for url: https://nominatim.openstreetmap.org/search?q=Pune&format=json&limit=1); will use mock fallback.
+2026-07-11 08:53:07 | INFO     | route_engine | Nominatim geocoding unavailable (403 Client Error: Forbidden for url: https://nominatim.openstreetmap.org/search?q=Mumbai&format=json&limit=1); will use mock fallback.
+2026-07-11 08:53:07 | WARNING  | route_engine | Geocoding failed for 'Pune' -> 'Mumbai'; using mock route.
+2026-07-11 08:53:07 | INFO     | route_engine | Nominatim geocoding unavailable (403 Client Error: Forbidden for url: https://nominatim.openstreetmap.org/search?q=Pune&format=json&limit=1); will use mock fallback.
+2026-07-11 08:53:07 | INFO     | route_engine | Nominatim geocoding unavailable (403 Client Error: Forbidden for url: https://nominatim.openstreetmap.org/search?q=Mumbai&format=json&limit=1); will use mock fallback.
+2026-07-11 08:53:07 | INFO     | trip_engine | Assessing trip for vehicle=TEST_001 Pune -> Mumbai
+2026-07-11 08:53:07 | INFO     | route_engine | Nominatim geocoding unavailable (403 Client Error: Forbidden for url: https://nominatim.openstreetmap.org/search?q=Pune&format=json&limit=1); will use mock fallback.
+2026-07-11 08:53:07 | INFO     | route_engine | Nominatim geocoding unavailable (403 Client Error: Forbidden for url: https://nominatim.openstreetmap.org/search?q=Mumbai&format=json&limit=1); will use mock fallback.
+2026-07-11 08:53:07 | WARNING  | route_engine | Geocoding failed for 'Pune' -> 'Mumbai'; using mock route.
+2026-07-11 08:53:07 | INFO     | trip_engine | Assessing trip for vehicle=TEST_001 Pune -> Mumbai
+2026-07-11 08:53:07 | INFO     | route_engine | Nominatim geocoding unavailable (403 Client Error: Forbidden for url: https://nominatim.openstreetmap.org/search?q=Pune&format=json&limit=1); will use mock fallback.
+2026-07-11 08:53:07 | INFO     | route_engine | Nominatim geocoding unavailable (403 Client Error: Forbidden for url: https://nominatim.openstreetmap.org/search?q=Mumbai&format=json&limit=1); will use mock fallback.
+2026-07-11 08:53:07 | WARNING  | route_engine | Geocoding failed for 'Pune' -> 'Mumbai'; using mock route.
+2026-07-11 08:53:27 | INFO     | data_loader | Loaded Phase 3 predictions from data/Phase3_Predictions.csv (2000 rows).
+2026-07-11 08:53:27 | INFO     | trip_engine | Assessing trip for vehicle=Vehicle_0001 Pune -> Mumbai
+2026-07-11 08:53:27 | INFO     | route_engine | Nominatim geocoding unavailable (403 Client Error: Forbidden for url: https://nominatim.openstreetmap.org/search?q=Pune&format=json&limit=1); will use mock fallback.
+2026-07-11 08:53:27 | INFO     | route_engine | Nominatim geocoding unavailable (403 Client Error: Forbidden for url: https://nominatim.openstreetmap.org/search?q=Mumbai&format=json&limit=1); will use mock fallback.
+2026-07-11 08:53:27 | WARNING  | route_engine | Geocoding failed for 'Pune' -> 'Mumbai'; using mock route.
+2026-07-11 08:53:36 | INFO     | data_loader | Loaded Phase 3 predictions from data/Phase3_Predictions.csv (2000 rows).
+2026-07-11 08:53:36 | INFO     | trip_engine | Assessing trip for vehicle=Vehicle_0001 Pune -> Mumbai
+2026-07-11 08:53:36 | INFO     | route_engine | Nominatim geocoding unavailable (403 Client Error: Forbidden for url: https://nominatim.openstreetmap.org/search?q=Pune&format=json&limit=1); will use mock fallback.
+2026-07-11 08:53:36 | INFO     | route_engine | Nominatim geocoding unavailable (403 Client Error: Forbidden for url: https://nominatim.openstreetmap.org/search?q=Mumbai&format=json&limit=1); will use mock fallback.
+2026-07-11 08:53:36 | WARNING  | route_engine | Geocoding failed for 'Pune' -> 'Mumbai'; using mock route.
+2026-07-11 08:53:36 | INFO     | service_centre_engine | Loaded 10 service centres from data/service_centres.json.
+2026-07-11 08:53:36 | WARNING  | data_loader | Vehicle_ID 'Vehicle_9999999' not found in Phase 3 data; using defaults.
+2026-07-11 08:53:36 | INFO     | trip_engine | Assessing trip for vehicle=Vehicle_9999999 Pune -> Mumbai
+2026-07-11 08:53:36 | INFO     | route_engine | Nominatim geocoding unavailable (403 Client Error: Forbidden for url: https://nominatim.openstreetmap.org/search?q=Pune&format=json&limit=1); will use mock fallback.
+2026-07-11 08:53:36 | INFO     | route_engine | Nominatim geocoding unavailable (403 Client Error: Forbidden for url: https://nominatim.openstreetmap.org/search?q=Mumbai&format=json&limit=1); will use mock fallback.
+2026-07-11 08:53:36 | WARNING  | route_engine | Geocoding failed for 'Pune' -> 'Mumbai'; using mock route.
+2026-07-12 15:35:37 | INFO     | trip_engine | Assessing trip for vehicle=TEST_001 Pune -> Mumbai
+2026-07-12 15:35:37 | INFO     | route_engine | Nominatim geocoding unavailable (403 Client Error: Forbidden for url: https://nominatim.openstreetmap.org/search?q=Pune&format=json&limit=1); will use mock fallback.
+2026-07-12 15:35:37 | INFO     | route_engine | Nominatim geocoding unavailable (403 Client Error: Forbidden for url: https://nominatim.openstreetmap.org/search?q=Mumbai&format=json&limit=1); will use mock fallback.
+2026-07-12 15:35:37 | WARNING  | route_engine | Geocoding failed for 'Pune' -> 'Mumbai'; using mock route.
+2026-07-12 15:35:37 | INFO     | service_centre_engine | Loaded 10 service centres from data/service_centres.json.
+2026-07-12 15:35:37 | INFO     | trip_engine | Assessing trip for vehicle=TEST_001 Pune -> Mumbai
+2026-07-12 15:35:37 | INFO     | route_engine | Nominatim geocoding unavailable (403 Client Error: Forbidden for url: https://nominatim.openstreetmap.org/search?q=Pune&format=json&limit=1); will use mock fallback.
+2026-07-12 15:35:37 | INFO     | route_engine | Nominatim geocoding unavailable (403 Client Error: Forbidden for url: https://nominatim.openstreetmap.org/search?q=Mumbai&format=json&limit=1); will use mock fallback.
+2026-07-12 15:35:37 | WARNING  | route_engine | Geocoding failed for 'Pune' -> 'Mumbai'; using mock route.
+2026-07-12 15:35:38 | INFO     | trip_engine | Assessing trip for vehicle=TEST_001 Pune -> Mumbai
+2026-07-12 15:35:38 | INFO     | route_engine | Nominatim geocoding unavailable (403 Client Error: Forbidden for url: https://nominatim.openstreetmap.org/search?q=Pune&format=json&limit=1); will use mock fallback.
+2026-07-12 15:35:38 | INFO     | route_engine | Nominatim geocoding unavailable (403 Client Error: Forbidden for url: https://nominatim.openstreetmap.org/search?q=Mumbai&format=json&limit=1); will use mock fallback.
+2026-07-12 15:35:38 | WARNING  | route_engine | Geocoding failed for 'Pune' -> 'Mumbai'; using mock route.
+2026-07-12 15:35:38 | INFO     | service_centre_engine | Loaded 10 service centres from data/service_centres.json.
+2026-07-12 15:35:38 | INFO     | route_engine | Nominatim geocoding unavailable (403 Client Error: Forbidden for url: https://nominatim.openstreetmap.org/search?q=Pune&format=json&limit=1); will use mock fallback.
+2026-07-12 15:35:38 | INFO     | route_engine | Nominatim geocoding unavailable (403 Client Error: Forbidden for url: https://nominatim.openstreetmap.org/search?q=Mumbai&format=json&limit=1); will use mock fallback.
+2026-07-12 15:35:38 | INFO     | route_engine | Nominatim geocoding unavailable (403 Client Error: Forbidden for url: https://nominatim.openstreetmap.org/search?q=Pune&format=json&limit=1); will use mock fallback.
+2026-07-12 15:35:38 | INFO     | route_engine | Nominatim geocoding unavailable (403 Client Error: Forbidden for url: https://nominatim.openstreetmap.org/search?q=Mumbai&format=json&limit=1); will use mock fallback.
+2026-07-12 15:35:38 | WARNING  | route_engine | Geocoding failed for 'Pune' -> 'Mumbai'; using mock route.
+2026-07-12 15:35:38 | INFO     | route_engine | Nominatim geocoding unavailable (403 Client Error: Forbidden for url: https://nominatim.openstreetmap.org/search?q=Pune&format=json&limit=1); will use mock fallback.
+2026-07-12 15:35:38 | INFO     | route_engine | Nominatim geocoding unavailable (403 Client Error: Forbidden for url: https://nominatim.openstreetmap.org/search?q=Mumbai&format=json&limit=1); will use mock fallback.
+2026-07-12 15:35:38 | INFO     | trip_engine | Assessing trip for vehicle=TEST_001 Pune -> Mumbai
+2026-07-12 15:35:38 | INFO     | route_engine | Nominatim geocoding unavailable (403 Client Error: Forbidden for url: https://nominatim.openstreetmap.org/search?q=Pune&format=json&limit=1); will use mock fallback.
+2026-07-12 15:35:38 | INFO     | route_engine | Nominatim geocoding unavailable (403 Client Error: Forbidden for url: https://nominatim.openstreetmap.org/search?q=Mumbai&format=json&limit=1); will use mock fallback.
+2026-07-12 15:35:38 | WARNING  | route_engine | Geocoding failed for 'Pune' -> 'Mumbai'; using mock route.
+2026-07-12 15:35:38 | INFO     | trip_engine | Assessing trip for vehicle=TEST_001 Pune -> Mumbai
+2026-07-12 15:35:38 | INFO     | route_engine | Nominatim geocoding unavailable (403 Client Error: Forbidden for url: https://nominatim.openstreetmap.org/search?q=Pune&format=json&limit=1); will use mock fallback.
+2026-07-12 15:35:38 | INFO     | route_engine | Nominatim geocoding unavailable (403 Client Error: Forbidden for url: https://nominatim.openstreetmap.org/search?q=Mumbai&format=json&limit=1); will use mock fallback.
+2026-07-12 15:35:38 | WARNING  | route_engine | Geocoding failed for 'Pune' -> 'Mumbai'; using mock route.
+2026-07-27 13:45:07 | INFO     | data_loader | Loaded Phase 3 predictions from data\Phase3_Predictions.csv (2000 rows).
+2026-07-27 13:45:07 | INFO     | trip_engine | Assessing trip for vehicle=Vehicle_0001 Pune -> Mumbai
+2026-07-27 13:45:11 | INFO     | service_centre_engine | Loaded 10 service centres from data\service_centres.json.
+2026-07-27 13:51:40 | INFO     | trip_engine | Assessing trip for vehicle=Vehicle_0004 Pune -> Mumbai
+2026-07-27 14:06:33 | INFO     | trip_engine | Assessing trip for vehicle=Vehicle_0004 Pune -> Mumbai

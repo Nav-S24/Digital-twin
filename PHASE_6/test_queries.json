@@ -1,0 +1,92 @@
+[
+  {
+    "id": "q01",
+    "question": "What does P0301 mean?",
+    "category": "obd_docs",
+    "notes": "Common misfire DTC lookup — tests exact-code retrieval."
+  },
+  {
+    "id": "q02",
+    "question": "How often should brake pads be replaced?",
+    "category": "maintenance_guides",
+    "notes": "Maintenance interval lookup."
+  },
+  {
+    "id": "q03",
+    "question": "Why is my battery overheating?",
+    "category": "service_guides",
+    "notes": "Diagnostic/troubleshooting style question."
+  },
+  {
+    "id": "q04",
+    "question": "My engine temperature is high. What should I check first?",
+    "category": "service_guides",
+    "notes": "Symptom-based, open-ended troubleshooting question."
+  },
+  {
+    "id": "q05",
+    "question": "How do I service ABS brakes?",
+    "category": "service_guides",
+    "notes": "Procedure-style question requiring step ordering."
+  },
+  {
+    "id": "q06",
+    "question": "What does DTC code P0128 indicate and how is it fixed?",
+    "category": "obd_docs",
+    "notes": "Two-part question: code meaning + remedy."
+  },
+  {
+    "id": "q07",
+    "question": "What is the recommended engine oil change interval?",
+    "category": "maintenance_guides",
+    "notes": "Numeric spec lookup."
+  },
+  {
+    "id": "q08",
+    "question": "What could cause a P0420 catalyst efficiency code?",
+    "category": "obd_docs",
+    "notes": "Diagnostic reasoning question."
+  },
+  {
+    "id": "q09",
+    "question": "How do I check tire pressure correctly?",
+    "category": "manuals",
+    "notes": "Owner-manual style procedural question."
+  },
+  {
+    "id": "q10",
+    "question": "What is the torque specification for the wheel lug nuts?",
+    "category": "manuals",
+    "notes": "Precise numeric spec that must not be hallucinated."
+  },
+  {
+    "id": "q11",
+    "question": "What does it mean if the check engine light is flashing versus solid?",
+    "category": "obd_docs",
+    "notes": "Comparative/conceptual question."
+  },
+  {
+    "id": "q12",
+    "question": "What is the recommended coolant type and replacement interval?",
+    "category": "maintenance_guides",
+    "notes": "Combined spec + interval question."
+  },
+  {
+    "id": "q13",
+    "question": "How do I reset the maintenance reminder light?",
+    "category": "manuals",
+    "notes": "Step-by-step procedure question."
+  },
+  {
+    "id": "q14",
+    "question": "What are the symptoms of a failing oxygen sensor?",
+    "category": "service_guides",
+    "notes": "Symptom-list style question."
+  },
+  {
+    "id": "q15",
+    "question": "What is quantum tunneling in semiconductor physics?",
+    "category": null,
+    "notes": "Deliberately out-of-domain question — should trigger the 'not enough information in the knowledge base' guardrail rather than a hallucinated answer."
+  }
+]
