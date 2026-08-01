@@ -43,7 +43,7 @@ class DriverAnalyticsPipeline:
         self.profiler = DriverProfiler()
 
         llm_coach = None
-        if LLM.anthropic_api_key or LLM.openai_api_key:
+        if LLM.google_api_key:
             from coaching.llm_coach import LLMCoach
             llm_coach = LLMCoach()
         self.coaching_engine = CoachingEngine(llm_coach=llm_coach)

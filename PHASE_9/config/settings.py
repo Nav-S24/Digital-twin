@@ -167,12 +167,10 @@ class VehicleConfig:
 @dataclass(frozen=True)
 class LLMConfig:
     """Configuration for the coaching / summarization LLM integration."""
-
-    provider: str = _env_str("LLM_PROVIDER", "anthropic")  # "anthropic" or "openai"
-    anthropic_api_key: str = _env_str("ANTHROPIC_API_KEY", "")
-    openai_api_key: str = _env_str("OPENAI_API_KEY", "")
-    anthropic_model: str = _env_str("ANTHROPIC_MODEL", "claude-sonnet-5")
-    openai_model: str = _env_str("OPENAI_MODEL", "gpt-4o-mini")
+    provider: str = _env_str("LLM_PROVIDER", "gemini")
+    google_api_key: str = _env_str("GOOGLE_API_KEY", "")
+    gemini_model: str = _env_str("GEMINI_MODEL", "gemini-2.5-flash")
+    
     max_tokens: int = _env_int("LLM_MAX_TOKENS", 800)
     temperature: float = _env_float("LLM_TEMPERATURE", 0.4)
     request_timeout_seconds: int = _env_int("LLM_TIMEOUT", 30)

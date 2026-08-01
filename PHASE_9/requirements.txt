@@ -16,8 +16,7 @@ plotly>=5.24.0
 scikit-learn>=1.4.0
 
 # LLM providers (install whichever you configure via LLM_PROVIDER)
-anthropic>=0.25.0
-openai>=1.14.0
+google-genai>=1.30.0
 
 # Testing
 pytest>=8.0.0

@@ -17,3 +17,6 @@ __pycache__/
 
 # Pytest
 .pytest_cache/
+
+logs/
+*.log

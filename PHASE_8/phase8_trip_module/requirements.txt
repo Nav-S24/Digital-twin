@@ -9,5 +9,5 @@ plotly>=5.20.0
 python-dotenv>=1.0.1
 pytest>=8.0.0
 
-# Optional: only needed if ANTHROPIC_API_KEY is set for live LLM explanations
-anthropic>=0.25.0
+# Optional: only needed if GOOGLE_API_KEY is set for live LLM explanations
+google-genai>=1.0.0

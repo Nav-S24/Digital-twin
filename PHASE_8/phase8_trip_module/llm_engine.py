@@ -27,10 +27,12 @@ class LLMEngine:
         self._client = None
         if not self.mock_mode:
             try:
-                import anthropic  # imported lazily; optional dependency
-                self._client = anthropic.Anthropic(api_key=settings.llm_api_key)
+                 from google import genai
+                 self._client = genai.Client(
+                     api_key=settings.llm_api_key
+                     )
             except Exception as exc:  # noqa: BLE001
-                logger.warning("Anthropic SDK unavailable (%s); using template fallback.", exc)
+                logger.warning("Gemini SDK unavailable (%s); using template fallback.", exc)
                 self.mock_mode = True
 
     def explain(
@@ -47,15 +49,11 @@ class LLMEngine:
 
         try:
             prompt = self._build_prompt(vehicle, route, weather, fuel, risk, recommendations)
-            response = self._client.messages.create(
-                model="claude-sonnet-5",
-                max_tokens=400,
-                messages=[{"role": "user", "content": prompt}],
-            )
-            text_blocks = [b.text for b in response.content if getattr(b, "type", "") == "text"]
-            return "\n".join(text_blocks).strip() or self._template_summary(
-                vehicle, route, weather, fuel, risk, recommendations
-            )
+            response = self._client.models.generate_content(
+                 model="gemini-2.5-flash",
+                 contents=prompt,
+                 )
+            return response.text.strip()
         except Exception as exc:  # noqa: BLE001
             logger.exception("LLM call failed, using template fallback: %s", exc)
             return self._template_summary(vehicle, route, weather, fuel, risk, recommendations)

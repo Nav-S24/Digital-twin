@@ -77,7 +77,7 @@ class Settings(BaseSettings):
     openweather_api_key: Optional[str] = None
     fuel_price_api_key: Optional[str] = None
     ors_api_key: Optional[str] = None  # OpenRouteService
-    llm_api_key: Optional[str] = Field(default=None, validation_alias="ANTHROPIC_API_KEY")
+    llm_api_key: Optional[str] = Field(default=None,validation_alias="GOOGLE_API_KEY")
 
     # --- Mock mode toggles (auto-enabled when the relevant key is missing) ---
     force_mock_weather: bool = False
