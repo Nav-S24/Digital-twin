@@ -9,7 +9,9 @@ add to your existing main.py:
 
 This file is provided so Phase 7 can be run and tested on its own.
 """
+from dotenv import load_dotenv
 
+load_dotenv()
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
