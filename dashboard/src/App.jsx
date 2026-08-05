@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
 import TopBar from "./components/TopBar";
 import { VehicleProvider } from "./context/VehicleContext";
-
+import Assistant from "./pages/Assistant";
 import Overview from "./pages/Overview";
 import HealthScore from "./pages/HealthScore";
 import PredictiveMaintenance from "./pages/PredictiveMaintenance";
@@ -28,6 +28,7 @@ export default function App() {
                 <Route path="/twin" element={<DigitalTwin />} />
                 <Route path="/obd" element={<OBDDiagnostics />} />
                 <Route path="/knowledge" element={<KnowledgeBase />} />
+                <Route path="/assistant" element={<Assistant />} />
                 <Route path="/trip" element={<TripPlanner />} />
                 <Route path="/driver" element={<DriverBehavior />} />
               </Routes>

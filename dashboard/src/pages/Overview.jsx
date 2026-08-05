@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import {
-  HeartPulse, Wrench, Boxes, ScanLine, BookOpen, Map, Gauge as GaugeIcon, ArrowRight,
+  HeartPulse, Wrench, Boxes, ScanLine, BookOpen, MessageSquare,Map, Gauge as GaugeIcon, ArrowRight,
 } from "lucide-react";
 import { phase2 } from "../api/client";
 import { PageHeader, Card, ErrorState, GaugeSkeleton } from "../components/ui";
@@ -13,6 +13,14 @@ const PHASES = [
   { to: "/twin", n: "04", title: "Digital Twin", desc: "Live component simulation & fleet view", icon: Boxes },
   { to: "/obd", n: "05", title: "OBD Diagnostics", desc: "Fault code lookup & full diagnostic pipeline", icon: ScanLine },
   { to: "/knowledge", n: "06", title: "Knowledge Base", desc: "RAG-grounded manuals & service docs", icon: BookOpen },
+
+  {
+    to: "/assistant",
+    n: "07",
+    title: "Assistant",
+    desc: "Conversational AI for vehicle intelligence",
+    icon: MessageSquare,
+  },
   { to: "/trip", n: "08", title: "Trip Planner", desc: "GO / CAUTION / NO-GO trip readiness", icon: Map },
   { to: "/driver", n: "09", title: "Driver Behaviour", desc: "Driving-style profiling & coaching", icon: GaugeIcon },
 ];

@@ -176,3 +176,23 @@
 2026-07-27 13:45:18 | INFO     | scoring.driver_scorer | Scored 22 trips (mean score=81.98)
 2026-07-27 13:45:18 | INFO     | profiling.driver_profiler | Trip profile distribution: {'Safe Driver': 10, 'Eco Driver': 7, 'Normal Driver': 3, 'High Risk Driver': 2}
 2026-07-27 13:45:18 | INFO     | pipeline | Pipeline run complete: 22 trips, 15 drivers, 684 events
+2026-08-04 22:12:28 | INFO     | pipeline | Running full Phase 9 pipeline on source: data/raw/VED_sample_small.csv
+2026-08-04 22:12:28 | INFO     | preprocessing.data_loader | Starting VED preprocessing pipeline
+2026-08-04 22:12:28 | INFO     | preprocessing.data_loader | Loaded 7999 rows from VED_sample_small.csv
+2026-08-04 22:12:28 | INFO     | preprocessing.data_loader | Removed 801 rows with implausible GPS speed jumps
+2026-08-04 22:12:28 | INFO     | preprocessing.data_loader | Preprocessing complete: 7198 rows, 15 vehicles, 22 trips
+2026-08-04 22:12:29 | INFO     | feature_engineering.feature_extractor | Extracted features for 22 trips
+2026-08-04 22:12:30 | INFO     | detection.behavior_detector | Detected 665 total events across 22 trips
+2026-08-04 22:12:30 | INFO     | scoring.driver_scorer | Scored 22 trips (mean score=82.25)
+2026-08-04 22:12:30 | INFO     | profiling.driver_profiler | Trip profile distribution: {'Safe Driver': 10, 'Eco Driver': 7, 'Normal Driver': 3, 'High Risk Driver': 2}
+2026-08-04 22:12:30 | INFO     | pipeline | Pipeline run complete: 22 trips, 15 drivers, 665 events
+2026-08-05 16:36:47 | INFO     | pipeline | Running full Phase 9 pipeline on source: data/raw/VED_sample_small.csv
+2026-08-05 16:36:47 | INFO     | preprocessing.data_loader | Starting VED preprocessing pipeline
+2026-08-05 16:36:47 | INFO     | preprocessing.data_loader | Loaded 7999 rows from VED_sample_small.csv
+2026-08-05 16:36:47 | INFO     | preprocessing.data_loader | Removed 801 rows with implausible GPS speed jumps
+2026-08-05 16:36:47 | INFO     | preprocessing.data_loader | Preprocessing complete: 7198 rows, 15 vehicles, 22 trips
+2026-08-05 16:36:48 | INFO     | feature_engineering.feature_extractor | Extracted features for 22 trips
+2026-08-05 16:36:50 | INFO     | detection.behavior_detector | Detected 665 total events across 22 trips
+2026-08-05 16:36:50 | INFO     | scoring.driver_scorer | Scored 22 trips (mean score=82.25)
+2026-08-05 16:36:50 | INFO     | profiling.driver_profiler | Trip profile distribution: {'Safe Driver': 10, 'Eco Driver': 7, 'Normal Driver': 3, 'High Risk Driver': 2}
+2026-08-05 16:36:50 | INFO     | pipeline | Pipeline run complete: 22 trips, 15 drivers, 665 events

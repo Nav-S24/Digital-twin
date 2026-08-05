@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import {
   LayoutDashboard, HeartPulse, Wrench, Boxes, ScanLine,
-  BookOpen, Map, Gauge as GaugeIcon,
+  BookOpen,MessageSquare, Map, Gauge as GaugeIcon,
 } from "lucide-react";
 
 const NAV = [
@@ -11,6 +11,12 @@ const NAV = [
   { to: "/twin", label: "Digital Twin", icon: Boxes, phase: "04" },
   { to: "/obd", label: "OBD Diagnostics", icon: ScanLine, phase: "05" },
   { to: "/knowledge", label: "Knowledge Base", icon: BookOpen, phase: "06" },
+  {
+    to: "/assistant",
+    label: "Assistant",
+    icon: MessageSquare,
+    phase: "07",
+  },
   { to: "/trip", label: "Trip Planner", icon: Map, phase: "08" },
   { to: "/driver", label: "Driver Behaviour", icon: GaugeIcon, phase: "09" },
 ];

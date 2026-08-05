@@ -104,13 +104,12 @@ def run_rag_pipeline(
 ) -> RagResult:
     """
     Full RAG orchestration:
-        1. Retrieve grounding chunks (already threshold-filtered by retriever.py).
-        2. If nothing relevant was found, short-circuit and never call the LLM
-           at all — this is the main hallucination guardrail: a model cannot
-           fabricate an answer to a call it never receives.
-        3. Otherwise, build the strict grounded prompt and call Gemini.
-        4. Return the answer alongside the sources actually used and a
-           retrieval-based confidence score.
+        1. Retrieve grounding chunks.
+        2. Skip the LLM if nothing relevant was found.
+        3. Build the prompt.
+        4. Print debugging information.
+        5. Call Gemini.
+        6. Return answer + sources + confidence.
     """
     if not question or not question.strip():
         raise ValueError("question must not be blank")
@@ -119,10 +118,44 @@ def run_rag_pipeline(
 
     if not chunks:
         logger.info("No chunks passed the relevance threshold — skipping LLM call.")
-        return RagResult(answer=NO_CONTEXT_ANSWER, sources=[], confidence=0.0)
+        return RagResult(
+            answer=NO_CONTEXT_ANSWER,
+            sources=[],
+            confidence=0.0,
+        )
 
     prompt = build_prompt(question, chunks)
+
+    # ===================== DEBUG =====================
+    print("\n" + "=" * 80)
+    print("QUESTION:")
+    print(question)
+    print("=" * 80)
+
+    print("\nRETRIEVED CHUNKS:")
+
+    for i, chunk in enumerate(chunks, start=1):
+        print("\n" + "-" * 80)
+        print(f"Chunk {i}")
+        print(f"File : {chunk.metadata.get('file_name')}")
+        print(f"Page : {chunk.metadata.get('page')}")
+        print(f"Score: {chunk.score}")
+        print("-" * 80)
+        print(chunk.text)
+        print("-" * 80)
+
+    print("\n" + "=" * 80)
+    print("FINAL PROMPT SENT TO GEMINI")
+    print("=" * 80)
+    print(prompt)
+    print("=" * 80)
+    # =================== END DEBUG ===================
+
     answer = call_gemini(prompt)
     confidence = compute_confidence(chunks)
 
-    return RagResult(answer=answer, sources=chunks, confidence=confidence)
+    return RagResult(
+        answer=answer,
+        sources=chunks,
+        confidence=confidence,
+    )
